@@ -1,0 +1,41 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+.product-card {
+  border: 1px solid black;
+  padding: 5px;
+  width: 250px;
+  height: auto;
+}
+.product-card > img {
+  width: 100px;
+}
+.pagination-cont {
+  margin: 10px 0;
+}
+.pages {
+  border: 1px solid black;
+  margin: 2px;
+  padding: 2px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.active-page {
+  background-color: cadetblue;
+}
+.page-icon {
+  height: 20px;
+}
+.page-icon > img {
+  height: 100%;
+}
