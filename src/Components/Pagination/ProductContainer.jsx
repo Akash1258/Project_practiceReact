@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useDataFetch } from "../Hooks/useFetchData";
+import { useDataFetch } from "../../Hooks/useFetchData";
 import { ProductCard } from "./ProductCard";
-import "../styles.css";
+import "../../styles.css";
 import { Pagination } from "./Pagination";
 
 const DATA_PER_PAGE = 10;

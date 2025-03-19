@@ -1,4 +1,4 @@
-import { ProductContainer } from "./Components/ProductContainer";
+import { ProductContainer } from "./Components/Pagination/ProductContainer";
 import "./styles.css";
 
 export default function App() {
