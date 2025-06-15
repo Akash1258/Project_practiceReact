@@ -1,10 +1,10 @@
-.App {
+/* .App {
   font-family: sans-serif;
   text-align: center;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-}
+} */
 .product-container {
   display: flex;
   flex-wrap: wrap;

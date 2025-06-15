@@ -1,0 +1,22 @@
+accordian-cont {
+  display: flex;
+  flex-direction: column;
+  column-gap: 10px;
+}
+
+.accordian-card {
+  border: 1px solid lightblue;
+  padding: 10px 20px;
+  width: 300px;
+}
+.accordian-card-title {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 600;
+}
+.accordian-card-content {
+  text-align: left;
+  margin-top: 6px;
+}
