@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Folder } from "./Folder";
 import { File } from "./File";
 
-export const FolderStr = ({ node, margin, handleAddNew }) => {
+export const FolderStr = ({ node, margin, handleAddNew, handleDelete }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   return (
     <div key={node?.id}>
@@ -15,6 +15,7 @@ export const FolderStr = ({ node, margin, handleAddNew }) => {
               handleAddNew={handleAddNew}
               id={node?.id}
               setIsExpanded={setIsExpanded}
+              handleDelete={handleDelete}
             />
           </div>
           {isExpanded && (
@@ -25,13 +26,19 @@ export const FolderStr = ({ node, margin, handleAddNew }) => {
                   node={item}
                   margin={margin + 10}
                   handleAddNew={handleAddNew}
+                  handleDelete={handleDelete}
                 />
               ))}
             </div>
           )}
         </>
       ) : (
-        <File name={node?.name} margin={margin} />
+        <File
+          name={node?.name}
+          margin={margin}
+          id={node?.id}
+          handleDelete={handleDelete}
+        />
       )}
     </div>
   );

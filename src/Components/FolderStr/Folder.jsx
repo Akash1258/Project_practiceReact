@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { FaFolder } from "react-icons/fa";
 
-export const Folder = ({ name, margin, setIsExpanded, id, handleAddNew }) => {
+export const Folder = ({
+  name,
+  margin,
+  setIsExpanded,
+  id,
+  handleAddNew,
+  handleDelete,
+}) => {
   const [addFileFolder, setAddFileFolder] = useState("");
   const [fileName, setFileName] = useState("");
   return (
@@ -43,6 +50,17 @@ export const Folder = ({ name, margin, setIsExpanded, id, handleAddNew }) => {
           onClick={() => setAddFileFolder("folder")}
         >
           Add Folder
+        </button>
+        <button
+          type="button"
+          onClick={() => handleDelete(id)}
+          style={{
+            border: "1px solid",
+            padding: "4px",
+            cursor: "pointer",
+          }}
+        >
+          Delete
         </button>
       </div>
       {addFileFolder ? (
