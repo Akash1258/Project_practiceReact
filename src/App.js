@@ -1,6 +1,6 @@
 // import { AccordianComp } from "./Components/Accordian/Accordian";
 // import { FolderStrContainer } from "./Components/FolderStr/FolderStrContainer";
-import { ProductContainer } from "./Components/Pagination/ProductContainer";
+// import { ProductContainer } from "./Components/Pagination/ProductContainer";
 import { TriggerNotification } from "./Components/ToastMessage/TriggerNotification";
 import { useTriggerNotification } from "./Hooks/usetriggerNotification";
 
@@ -13,7 +13,7 @@ export default function App() {
       {/* <ProductContainer /> */}
       {/* <AccordianComp /> */}
       {/* <FolderStrContainer /> */}
-      {/* <TriggerNotification triggerNotification={triggerNotification} /> */}
+      <TriggerNotification triggerNotification={triggerNotification} />
       {AlertBox}
     </div>
   );
