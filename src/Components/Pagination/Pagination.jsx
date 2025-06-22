@@ -1,5 +1,6 @@
 import React from "react";
 import "../../styles.css";
+import { AiOutlineCaretLeft, AiOutlineCaretRight } from "react-icons/ai";
 
 export const Pagination = ({ noOfPages, currPage, setCurrPage }) => {
   return (
@@ -13,12 +14,7 @@ export const Pagination = ({ noOfPages, currPage, setCurrPage }) => {
           }}
           className="page-icon"
         >
-          <img
-            src={
-              "https://www.shutterstock.com/image-vector/left-arrow-icon-vector-trendy-260nw-1934818211.jpg"
-            }
-            alt="left"
-          />
+          <AiOutlineCaretLeft />
         </button>
         {noOfPages
           ? [...Array(noOfPages)?.keys()].map((page) => (
@@ -42,12 +38,7 @@ export const Pagination = ({ noOfPages, currPage, setCurrPage }) => {
           }}
           className="page-icon"
         >
-          <img
-            src={
-              "https://icons.veryicon.com/png/o/miscellaneous/background-basic-version-icon-library/34-right-side.png"
-            }
-            alt="left"
-          />
+          <AiOutlineCaretRight />
         </button>
       </div>
     </div>

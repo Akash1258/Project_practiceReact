@@ -1,0 +1,29 @@
+.container {
+  border: 1px solid;
+  display: flex;
+  gap: 6px;
+  padding: 14px 16px;
+  color: white;
+  width: 20%;
+  border-radius: 12px;
+  font-size: 16px;
+  position: absolute;
+}
+.top-right {
+  right: 10px;
+}
+.bottom-right {
+  right: 10px;
+}
+.top-left {
+  left: 10px;
+}
+.bottom-left {
+  left: 10px;
+}
+.success {
+  background-color: #159588;
+}
+.error {
+  background-color: #d50000;
+}
