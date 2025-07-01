@@ -1,0 +1,42 @@
+Usages of call, apply and bind method
+
+1. Changing the this context:
+
+    You can use call or apply to invoke a function with a different this context. This is useful when you want to reuse a function with different objects. 
+
+     const person1 = {
+       name: "Alice",
+      };
+
+    const person2 = {
+      name: "Bob",
+     };
+
+function greet() {
+  console.log(`Hello, ${this.name}!`);
+}
+
+greet.call(person1); // "Hello, Alice!"
+greet.call(person2); // "Hello, Bob!"
+
+////////////////////////////////////////////////////////////////
+
+
+2.   Function borrowing:
+
+    You can borrow methods from one object to use on another object.
+    
+    const cat = {
+  name: "Whiskers",
+  speak: function () {
+    console.log(`${this.name} says meow`);
+  }
+};
+
+const dog = {
+  name: "Buddy"
+};
+
+cat.speak.call(dog); // "Buddy says meow"
+
+

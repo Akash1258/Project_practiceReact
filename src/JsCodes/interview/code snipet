@@ -1,0 +1,183 @@
+///// Flat an array  /////////
+ 
+ const biDimensionalArr = [11, [22, 33], [44, 55], [66, 77], 88, 99];
+const flattenArr = [].concat(...biDimensionalArr); // [11, 22, 33, 44, 55, 66, 77, 88, 99]
+
+const arr = [1, [2,3], 4, 5, [6,7]];
+const fllattenArr = arr.flat(); // [1, 2, 3, 4, 5, 6, 7]
+
+// And for multiDemensional arrays
+const multiDimensionalArr = [11, [22, 33], [44, [55, 66, [77, [88]], 99]]];
+const oneStepFlat = multiDimensionalArr.flat(1); // [11, 22, 33, 44, [55, 66, [77, [88]], 99]]
+const towStep = multiDimensionalArr.flat(2); // [11, 22, 33, 44, 55, 66, [77, [88]], 99]
+const fullyFlatArray = multiDimensionalArr.flat(Infinity); // [11, 22, 33, 44, 55, 66, 77, 88, 99]
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q  
+function foo() {
+  let x = (y = 0);
+  x++;
+  y++;
+  return x;
+}
+
+console.log(foo(), typeof x, typeof y);
+
+o/p :  1, undefined and number
+explain:  the statement let x = y = 0 declares a local variable x. Whereas y declared as a global variable accidentally. 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q
+function main() {
+  console.log("A");
+  setTimeout(function print() {
+    console.log("B");
+  }, 0);
+  console.log("C");
+}
+main();
+
+o/p : A, C and B
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q 
+((0.1+0.2)===0.3)
+
+o/p : false 
+explain : 0.30000000000000004 = (0.1+0.2)
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q 
+var y = 1;
+if (function f() {}) {
+  y += typeof f;
+}
+console.log(y);
+
+o/p :  1undefined
+
+explain:  
+1. You can see function expression instead function declaration inside if statement. So it always returns true.
+2. Since it is not declared(or assigned) anywhere, f is undefined and typeof f is undefined too.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q
+const obj = {
+  prop1: function () {
+    return 0;
+  },
+  prop2() {
+    return 1;
+  },
+  ["prop" + 3]() {
+    return 2;
+  },
+};
+
+console.log(obj.prop1());
+console.log(obj.prop2());
+console.log(obj.prop3());
+
+o/p : 0, 1, 2
+explain:  ES6 provides method definitions and property shorthands for objects. So both prop2 and prop3 are treated as regular function values.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q 
+console.log(1 < 2 < 3);
+console.log(3 > 2 > 1);
+
+o/p: true, false
+
+explain: 
+
+The first statement follows the below order,
+>  console.log(1 < 2 < 3);
+>  console.log(true < 3);
+>  console.log(1 < 3); // True converted as 1 during comparison
+>  True
+
+Whereas the second statement follows the below order,
+>  console.log(3 > 2 > 1);
+>  console.log(true > 1);
+>  console.log(1 > 1); // False converted as 0 during comparison
+>  False
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q
+function printNumbers(first, second, first) {
+  console.log(first, second, first);
+}
+printNumbers(1, 2, 3);
+
+o/p : 3, 2, 3
+explain:  
+In non-strict mode, the regular JavaScript functions allow duplicate named parameters. The above code snippet has duplicate parameters on 1st and 3rd parameters. The value of the first parameter is mapped to the third argument which is passed to the function. Hence, the 3rd argument overrides the first parameter.
+
+Note: In strict mode, duplicate parameters will throw a Syntax Error.
+
+const printNumbersArrow = (first, second, first) => {
+  console.log(first, second, first);
+};
+printNumbersArrow(1, 2, 3);
+o/p: SyntaxError: Duplicate parameter name not allowed in this context
+
+explain:  Unlike regular functions, the arrow functions doesn't not allow duplicate parameters in either strict or non-strict mode. So you can see SyntaxError in the console.
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q
+setTimeout(() => {console.log('1')}, 0);
+Promise.resolve('hello').then(() => console.log('2'));
+console.log('3');
+
+o/p:  3, 2, 1   because, api call are prior than browser api
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q
+let message = 'Hello World!';
+message[0] = 'J'
+console.log(message) // Hello World!
+
+let name = 'John';
+name = name + ' Smith';
+console.log(name); // John Smith
+
+o/p: Hello World!, John Smith     (string are immutable in js.)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q 
+let user1 = { 
+      name : 'Jacob',
+      age : 28
+    };
+    
+let user2 = {    
+      name : 'Jacob',
+      age : 28
+    };
+    
+console.log(user1 === user2);
+
+o/p : False    (object store reference)
+
+
+
+
+
+
+
+
+
+
