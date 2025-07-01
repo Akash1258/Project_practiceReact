@@ -1,0 +1,17 @@
+#boxCont {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 4px;
+    background-color: #eee;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    height: 50px;
+    width: 50px;
+}
+.box:hover{
+    border: 1px dotted;
+}
